@@ -1,12 +1,22 @@
-import java.util.Map;
+/**
+ * Universidad del Valle de Guatemala
+ * Departamento de Ciencias de la Computación
+ * Programación Orientada a Objetos
+ * 
+ *  clase celular para almacenar datos de los celulares y funcionalidades para controlarlos
+ * 
+ * @author: Erick Barrera; Sandra Pineda
+ * @version: 1.0.0 
+ */
 
+import java.util.Map;
 import java.util.Iterator;
 
 public class Celular extends Dispositivo{
     private String ram, procesador, almacenamiento, microUSB, cargador, cincoG;
 
     public Celular(String encendido, int volumen, int brillo, Map<String, String> videos,
-    String videoActual, String descripcion, String precio, int visaCuotas, String marca, String modelo,
+    String videoActual, String descripcion, double precio, int visaCuotas, String marca, String modelo,
     String ram, String procesador, String almacenamiento, String microUSB, String cargador, String cincoG){
         
         super(encendido, volumen, brillo, videos, videoActual, descripcion, precio, visaCuotas, marca, modelo);
@@ -60,7 +70,7 @@ public class Celular extends Dispositivo{
         this.cincoG = cincoG;
     }
 
-
+// Funcionalidades
 
     @Override
     public void subirVolumen(){
@@ -149,5 +159,9 @@ public class Celular extends Dispositivo{
             default:
                 break;
         }
+    }
+    @Override
+    public int compareTo(Dispositivo o) {
+        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
     };
 }

@@ -10,10 +10,11 @@
  */
 import java.util.Map;
 
-public abstract class Dispositivo implements Interfaz{
+public abstract class Dispositivo implements Interfaz, Comparable<Dispositivo>{
 
-    protected String encencido, videoActual, descripcion, precio, marca, modelo;
+    protected String encencido, videoActual, descripcion, marca, modelo;
     protected int visaCuotas, volumen, brillo;
+    protected double precio;
     protected Map<String, String> videos;
     
     /**
@@ -31,7 +32,7 @@ public abstract class Dispositivo implements Interfaz{
      * @param modelo
      */
     public Dispositivo(String encendido, int volumen, int brillo, Map<String, String> videos,
-    String videoActual, String descripcion, String precio, int visaCuotas, String marca, String modelo){
+    String videoActual, String descripcion, double precio, int visaCuotas, String marca, String modelo){
 
         this.encencido = encendido;
         this.volumen = volumen;
@@ -88,10 +89,10 @@ public abstract class Dispositivo implements Interfaz{
         this.descripcion = descripcion;
     }
 
-    public String getPrecio() {
+    public double getPrecio() {
         return precio;
     }
-    public void setPrecio(String precio) {
+    public void setPrecio( double precio) {
         this.precio = precio;
     }
 
@@ -114,5 +115,14 @@ public abstract class Dispositivo implements Interfaz{
     }
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    @Override
+    public int compareTo(Dispositivo dispositivo){
+        if (this.getPrecio() == dispositivo.getPrecio()) {
+            return 0;
+        } else{
+            return this.getPrecio() > dispositivo.getPrecio() ? 1 : -1 ;
+        }
     }
 }
