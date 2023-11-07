@@ -33,13 +33,35 @@ public class Operador{
         }
     }
 
-    public void max(){
-        
+    public Object max(){
+        if (dispositivos.isEmpty()) {
+            return null;
+        }
+        Dispositivo maxDevice = dispositivos.get(0);
+        for (Dispositivo dispositivo : dispositivos) {
+            if (dispositivo.compareTo(maxDevice) > 0) {
+                maxDevice = dispositivo;
+            }
+        }
+        return maxDevice; 
     }
 
-    public void min(){
+    public Object min(){
+        if (dispositivos.isEmpty()) {
+            return null;
+        }
+        Dispositivo minDevice = dispositivos.get(0);
+        for (Dispositivo dispositivo : dispositivos) {
+            if (dispositivo.compareTo(minDevice) < 0) {
+                minDevice = dispositivo;
+            }
+        }
+        return minDevice;
 
     }
 
+    public void controlador(Dispositivo dispositivo, int opcion, Iterator<String> cambiar) {
+        dispositivo.controlarVideos(opcion, cambiar);
+    }
     
 }
