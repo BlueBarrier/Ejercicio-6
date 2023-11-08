@@ -1,28 +1,54 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Departamento de Ciencias de la Computación
+ * Programación Orientada a Objetos
+ * 
+ *  clase para controlar y leer base de datos
+ * 
+ * @author: Erick Barrera; Sandra Pineda
+ * @version: 1.0.0 
+ */
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Iterator;
+
 public class Operador{
     private ArrayList<Dispositivo> dispositivos = new ArrayList<>();
 
+    /**
+     * Función para leer la base de datos
+     */
     public void LeerData(){
-        String csvFilePath = "UVGespaceDataBase.csv";
+        String csvFilePath = "BaseDatos.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String espacio;
             while ((espacio = br.readLine()) != null) {
                 String[] atributos = espacio.split(",");
+
+                //Map para los getVideos
+                String[] videos = atributos[19].split("/");
+                Map<String,String> tempMap = new HashMap<>(); 
+                for (String video : videos) {
+                    tempMap.put(video, "Pausado");
+                }
+                // switch
                 switch(atributos[0]){
                     case "celular":
-                        dispositivos.add(new Celular(atributos[10],Integer.parseInt(atributos[16]),Integer.parseInt(atributos[17]), null, 
-                        atributos[11], atributos[12], Integer.parseInt(atributos[18]), Integer.parseInt(atributos[15]), atributos[13], 
+                        dispositivos.add(new Celular(atributos[10],Integer.parseInt(atributos[16]),Integer.parseInt(atributos[17]), tempMap, 
+                        atributos[11], atributos[12], Integer.parseInt(atributos[18]), 
+                        Integer.parseInt(atributos[15]), atributos[13], 
                         atributos[14], atributos[1], atributos[2], atributos[3],atributos[4], 
                         atributos[5], atributos[7]));
                         break;
 
                     case "computadora":
-                        dispositivos.add(new Computadora(atributos[10],Integer.parseInt(atributos[16]),Integer.parseInt(atributos[17]), null, 
+                        dispositivos.add(new Computadora(atributos[10],Integer.parseInt(atributos[16]),Integer.parseInt(atributos[17]), tempMap, 
                         atributos[11], atributos[12], Integer.parseInt(atributos[18]), Integer.parseInt(atributos[15]), atributos[13], 
                         atributos[14], atributos[1], atributos[7],atributos[3], atributos[8], atributos[9]));
                         break;
@@ -34,11 +60,20 @@ public class Operador{
         }
     }
 
+    /**
+     * Método para obtener la lista de dispositivos
+     * 
+     * @return
+     */
     public ArrayList<Dispositivo> getDispositivos() {
         return dispositivos;
     }
 
-    public Object max(){
+    /**
+     * Método para obtener el dispositivo más caro
+     * @return
+     */
+    public Dispositivo max(){
         if (dispositivos.isEmpty()) {
             return null;
         }
@@ -51,7 +86,12 @@ public class Operador{
         return maxDevice; 
     }
 
-    public Object min(){
+    /**
+     * Método para obtener el dispositivo más barato
+     * 
+     * @return
+     */
+    public Dispositivo min(){
         if (dispositivos.isEmpty()) {
             return null;
         }
@@ -65,6 +105,12 @@ public class Operador{
 
     }
 
+    /**
+     * Función para controlar un dispositivo, pide la acción a realizar en base a un objeto
+     * 
+     * @param buscar
+     * @param scan
+     */
     public void controlador(Dispositivo buscar, Scanner scan) {
         for (Dispositivo dispositivo : dispositivos) {
             if (dispositivo.equals(buscar)) {
@@ -75,7 +121,8 @@ public class Operador{
                                     "\n4. subir brillo"+
                                     "\n5. información estado"+
                                     "\n6. información dispositivo"+
-                                    "\n7. cambiar video");
+                                    "\n7. cambiar video"+
+                                    "\n8. encender/apagar dispositivo");
                 try {
                     int aplicar = scan.nextInt();
                     scan.nextLine();
@@ -101,7 +148,17 @@ public class Operador{
                             cel.informacionDispositivo();
                             break;
                         case 7:
-                            // cel.controlarVideos(aplicar, scan);
+                            Map<String,String> controlar = buscar.getVideos();
+                            Iterator<String> cambiar = controlar.keySet().iterator();
+                            System.out.println("¿Qué desea hacer?"+
+                                                "\n1. Pausar"+
+                                                "\n2. Reproducir"+
+                                                "\n3. Cambiar");
+                            
+                            cel.controlarVideos(scan, cambiar);
+                            break;
+                        case 8:
+                            cel.encender();
                             break;
                         default:
                             break;
@@ -128,14 +185,24 @@ public class Operador{
                             compu.informacionDispositivo();
                             break;
                         case 7:
-                            // compu.controlarVideos();
+                            Map<String,String> controlar = buscar.getVideos();
+                            Iterator<String> cambiar = controlar.keySet().iterator();
+                            System.out.println("¿Qué desea hacer?"+
+                                                "\n1. Reproducir"+
+                                                "\n2. Pausar"+
+                                                "\n3. Cambiar");
+                            
+                            compu.controlarVideos(scan, cambiar);
+                            break;
+                        case 8:
+                            compu.encender();
                             break;
                         default:
                             break;
                     }
                     }                        
                 } catch (Exception e) {
-                    // TODO: handle exception
+                    System.out.println("Ingrese una opción válida");
                 }
             }
             

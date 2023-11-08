@@ -1,16 +1,16 @@
 tipo,ram,procesador,almacenamiento,microUSB,cargador,5G,tamaño,velocidadCPU,velocidadGpu,encendido,videoActual,descripcion,marca,modelo,visaCuotas,volumen,brillo,precio,videos
-celular,4GB,Qualcomm Snapdragon 855,64GB,true,false,true,null,null,null,true,video1,Descripción1,Marca1,Samsung Flip 7,12,100,100,500.0,video1,video2,video3
-celular,8GB,Exynos 990,128GB,true,true,true,null,null,null,false,video2,Descripción2,Marca2,Redminote 7,18,100,100,800.0,video2,video3,video1
-computadora,null,null,solido,null,null,null,15.6",2.3 GHz,Intel UHD 620,true,video3,Descripción3,Marca3,AsusGaming 7,24,100,100,1200.0,video3,video1,video2
-celular,6GB,Apple A14 Bionic,256GB,true,true,true,null,null,null,true,video1,Descripción4,Marca4,iPhone 15,12,100,100,700.0,video1,video2,video3
-computadora,null,null,disco duro,null,null,null,13.3",1.8 GHz,Intel HD Graphics,true,video2,Descripción5,Marca5,Microsoft Surface,24,100,100,900.0,video2,video3,video1
-celular,4GB,Qualcomm Snapdragon 855,128GB,false,false,true,null,null,null,false,video3,Descripción6,Marca6,Galaxy Note 5,12,100,100,600.0,video3,video1,video2
-celular,6GB,Exynos 990,64GB,true,true,false,null,null,null,true,video1,Descripción7,Marca7,iPhone12,18,100,100,750.0,video1,video2,video3
-computadora,null,null,solido,null,null,null,14",2.0 GHz,Intel UHD 620,true,video2,Descripción8,Marca8,Omen 15,12,100,100,1100.0,video2,video3,video1
-celular,8GB,Apple A14 Bionic,64GB,true,true,true,null,null,null,false,video3,Descripción9,Marca9,iPhone 20,18,100,100,900.0,video3,video1,video2
-celular,4GB,Qualcomm Snapdragon 855,128GB,false,true,false,null,null,null,true,video1,Descripción10,Marca10,Redmi Note 11,12,100,100,550.0,video1,video2,video3
-computadora,null,null,solido,null,null,null,15.6",2.2 GHz,Intel HD Graphics,true,video2,Descripción11,Marca11,HP Envy x360,12,100,100,1300.0,video2,video3,video1
-celular,6GB,Exynos 990,256GB,true,true,true,null,null,null,false,video3,Descripción12,Marca12,Poco X5,18,100,100,800.0,video3,video1,video2
-computadora,null,null,disco duro,null,null,null,13.3",1.6 GHz,Intel UHD 620,true,video1,Descripción13,Marca13,Alienware 12,24,100,100,1000.0,video1,video2,video3
-celular,4GB,Qualcomm Snapdragon 855,64GB,true,false,true,null,null,null,true,video2,Descripción14,Marca14,Hero Note 6,12,100,100,450.0,video2,video3,video1
-celular,8GB,Exynos 990,128GB,false,false,true,null,null,null,false,video3,Descripción15,Marca15,Galaxy A30,18,100,100,850.0,video3,video1,video2
+celular,4GB,Qualcomm Snapdragon 855,64GB,true,false,true,null,null,null,true,video1,Descripción1,Marca1,Samsung Flip 7,12,100,100,500,video1/video2/video3
+celular,8GB,Exynos 990,128GB,true,true,true,null,null,null,false,video2,Descripción2,Marca2,Redminote 7,18,100,100,800,video2/video3/video1
+computadora,null,null,solido,null,null,null,15.6",2.3 GHz,Intel UHD 620,true,video3,Descripción3,Marca3,AsusGaming 7,24,100,100,1200,video3/video1/video2/video4/video5
+celular,6GB,Apple A14 Bionic,256GB,true,true,true,null,null,null,true,video1,Descripción4,Marca4,iPhone 15,12,100,100,700,video1/video2/video3
+computadora,null,null,disco duro,null,null,null,13.3",1.8 GHz,Intel HD Graphics,true,video2,Descripción5,Marca5,Microsoft Surface,24,100,100,900,video2/video3/video1/video4/video5
+celular,4GB,Qualcomm Snapdragon 855,128GB,false,false,true,null,null,null,false,video3,Descripción6,Marca6,Galaxy Note 5,12,100,100,600,video3/video1/video2
+celular,6GB,Exynos 990,64GB,true,true,false,null,null,null,true,video1,Descripción7,Marca7,iPhone12,18,100,100,750,video1/video2/video3
+computadora,null,null,solido,null,null,null,14",2.0 GHz,Intel UHD 620,true,video2,Descripción8,Marca8,Omen 15,12,100,100,1100,video2/video3/video1/video4/video5
+celular,8GB,Apple A14 Bionic,64GB,true,true,true,null,null,null,false,video3,Descripción9,Marca9,iPhone 20,18,100,100,900,video3/video1/video2
+celular,4GB,Qualcomm Snapdragon 855,128GB,false,true,false,null,null,null,true,video1,Descripción10,Marca10,Redmi Note 11,12,100,100,550,video1/video2/video3
+computadora,null,null,solido,null,null,null,15.6",2.2 GHz,Intel HD Graphics,true,video2,Descripción11,Marca11,HP Envy x360,12,100,100,1300,video2/video3/video1/video4/video5
+celular,6GB,Exynos 990,256GB,true,true,true,null,null,null,false,video3,Descripción12,Marca12,Poco X5,18,100,100,800,video3/video1/video2
+computadora,null,null,disco duro,null,null,null,13.3",1.6 GHz,Intel UHD 620,true,video1,Descripción13,Marca13,Alienware 12,24,100,100,1000,video2/video3/video1/video4/video5
+celular,4GB,Qualcomm Snapdragon 855,64GB,true,false,true,null,null,null,true,video2,Descripción14,Marca14,Hero Note 6,12,100,100,450,video2/video3/video1
+celular,8GB,Exynos 990,128GB,false,false,true,null,null,null,false,video3,Descripción15,Marca15,Galaxy A30,18,100,100,850,video3/video1/video2

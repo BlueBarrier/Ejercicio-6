@@ -10,6 +10,7 @@
  */
 
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Iterator;
 
 public class Celular extends Dispositivo{
@@ -134,17 +135,30 @@ public class Celular extends Dispositivo{
                            "\nTecnología 5G: "+getCincoG());
     };
 
+    public void encender(){
+        if (getEncencido().equals("true")) {
+            setEncencido("false");
+            System.out.println(getEncencido());
+        }else{
+            setEncencido("true");
+            System.out.println(getEncencido());
+        }
+    }
+
     @Override
-    public void controlarVideos(int opcion, Iterator<String> cambiar){
+    public void controlarVideos(Scanner scan, Iterator<String> cambiar){
+        int opcion = scan.nextInt();
         Map<String,String> controlar = getVideos();
         switch (opcion) {
             case 1:
                 // reproducir
                 controlar.put(getVideoActual(),"Reproduciendo");
+                System.out.println(controlar.get(getVideoActual()));
                 break;
             case 2:
                 // pausar
                 controlar.put(getVideoActual(), "Pausado");
+                System.out.println(controlar.get(getVideoActual()));
                 break;
             case 3:
                 // cambiar
@@ -162,6 +176,10 @@ public class Celular extends Dispositivo{
     }
     @Override
     public int compareTo(Dispositivo o) {
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+        if (this.getPrecio() == o.getPrecio()) {
+            return 0;
+        } else{
+            return this.getPrecio() > o.getPrecio() ? 1 : -1 ;
+        }
     };
 }
