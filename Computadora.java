@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.Map;
 
-public abstract class Computadora extends Dispositivo {
+public class Computadora extends Dispositivo {
     private String ram, size, disco, velocidadCPU, velocidadGPU;
 
     public Computadora(String encendido, int volumen, int brillo, Map<String, String> videos,
